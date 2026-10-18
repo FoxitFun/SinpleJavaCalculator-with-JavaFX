@@ -29,7 +29,9 @@
         <Button text="±"
                 onAction="#onSignChangeClick"
                 GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-        <Button text="\%" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <Button text="\%"
+                onAction="#onPercentClick"
+                GridPane.columnIndex="2" GridPane.rowIndex="0"/>
         <Button text="/"
                 onAction="#onOperatorClick"
                 GridPane.columnIndex="3" GridPane.rowIndex="0"/>
@@ -44,7 +46,9 @@
         <Button text="9"
                 onAction="#onDigitClick"
                 GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-        <Button text="x" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        <Button text="x"
+                onAction="#onOperatorClick"
+                GridPane.columnIndex="3" GridPane.rowIndex="1"/>
 
         <Button text="4"
                 onAction="#onDigitClick"
@@ -55,7 +59,7 @@
         <Button text="6"
                 onAction="#onDigitClick"
                 GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-        <Button text="−"
+        <Button text="-"
                 onAction="#onOperatorClick"
                 GridPane.columnIndex="3" GridPane.rowIndex="2"/>
 

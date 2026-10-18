@@ -29,12 +29,22 @@ public class CalculatorController {
     @FXML
     private void onClearClick(javafx.event.ActionEvent event) {
         display.setText("0");
+        firstOperand = 0;
+        operator = null;
+        startNewNumber = true;
     }
 
     @FXML
     private void onDecimalClick(javafx.event.ActionEvent event) {
-        String currentValue = display.getText();
-        display.setText(currentValue + ",");
+        if (startNewNumber) {
+            display.setText("0,");
+            startNewNumber = false;
+            return;
+        }
+        if(!display.getText().contains(",")) {
+            String currentValue = display.getText();
+            display.setText(currentValue + ",");
+        }
     }
 
     @FXML
@@ -61,6 +71,21 @@ public class CalculatorController {
         );
 
         operator = button.getText();
+        startNewNumber = true;
+    }
+
+    @FXML
+    private void onPercentClick(){
+        double currentValue = Double.parseDouble(
+                display.getText().replace(",", ".")
+        );
+
+        double result = currentValue / 100;
+
+        display.setText(
+                String.valueOf(result).replace(".", ",")
+        );
+
         startNewNumber = true;
     }
 
