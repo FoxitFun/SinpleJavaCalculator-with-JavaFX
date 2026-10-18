@@ -27,7 +27,7 @@ public class CalculatorController {
     }
 
     @FXML
-    private void onClearClick(javafx.event.ActionEvent event) {
+    private void onClearClick() {
         display.setText("0");
         firstOperand = 0;
         operator = null;
@@ -35,7 +35,7 @@ public class CalculatorController {
     }
 
     @FXML
-    private void onDecimalClick(javafx.event.ActionEvent event) {
+    private void onDecimalClick() {
         if (startNewNumber) {
             display.setText("0,");
             startNewNumber = false;
@@ -48,7 +48,7 @@ public class CalculatorController {
     }
 
     @FXML
-    private void onSignChangeClick(javafx.event.ActionEvent event) {
+    private void onSignChangeClick() {
         String currentValue = display.getText();
 
         if (currentValue.equals("0") || currentValue.equals("0,")){
